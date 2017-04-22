@@ -248,7 +248,7 @@ function bubbleChart() {
 
 
     function LightenDarkenColor(col, amt) {
-      console.log(col);
+      //console.log(col);
 
         var usePound = false;
 
@@ -285,15 +285,42 @@ function bubbleChart() {
                   '</span><br/>' +
                   '<span class="name">' + toTitle(chart_name) +
                   ': </span><span' +
-                  ' class="value">' +
-                  addCommas(d[chart_name]) +
+                  ' class="value">' + add_rupee_symbol(chart_name) +
+                  addCommas(d[chart_name]) + add_percentage_symbol(chart_name) +
                   '</span><br/>';
+    //console.log(content);
     tooltip.showTooltip(content, d3.event);
+  }
+
+  function add_rupee_symbol(chart_name) {
+    if (chart_name == 'expense') {
+      return 'Rs. ';
+    }
+    return '';
+  }
+
+  function add_percentage_symbol(chart_name) {
+    if (chart_name != 'expense') {
+      return '%';
+    }
+    return '';
   }
 
   function toTitle (str) {
     if ((str===null) || (str===''))
          return false;
+    else if (str == 'education') {
+      return "Women with 10+ years of Education";
+    }
+    else if (str == 'anc') {
+      return "Women who had at least 4 Antenatal Care visits";
+    }
+    else if (str == 'contraceptive') {
+      return "Met needs in Family planning";
+    }
+    else if (str == 'expense') {
+      return "Expenditure of delivery in public hospitals";
+    }
     else
      str = str.toString();
    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -321,7 +348,7 @@ function bubbleChart() {
     if (displayName === 'anc') {
       chart_name = 'anc';
       desc.innerHTML = "Percentage of women who had at least 4 Antenatal" +
-          " Care visits.";
+          " Care visits";
       refresh_display();
 
       //splitBubbles();
@@ -331,19 +358,20 @@ function bubbleChart() {
 
     else if (displayName == 'contraceptive') {
       chart_name = 'contraceptive';
-      desc.innerHTML = "Total need for family planning";
+      desc.innerHTML = "Percentage of met needs family planning";
       refresh_display();
     }
 
     else if (displayName == 'expense') {
       chart_name = 'expense';
-      desc.innerHTML = "Total out of pocket expenditure in a public hospital";
+      desc.innerHTML = "Total out of pocket expenditure to conduct a" +
+          " delivery in a public hospital";
       refresh_display();
     }
 
     else {
       chart_name = "education";
-      desc.innerHTML = "Percentage of women with 10+ years of education.";
+      desc.innerHTML = "Percentage of women with 10+ years of education";
       refresh_display();
       //groupBubbles();
       //bubbles = d3.selectAll('.bubble')
