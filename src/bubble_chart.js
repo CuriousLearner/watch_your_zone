@@ -82,7 +82,7 @@ function bubbleChart() {
     // working with data.
 
     var max_val = Math.max.apply(null, rawData.map(function(a) {return a[chart_name]}));
-    console.log("max val", max_val);
+    //console.log("max val", max_val);
     var myNodes = rawData.map(function (d) {
       return {
         id: d.id,
@@ -439,5 +439,3 @@ var refresh_display = function() {
 
 d3.select("body")
   .style("background-color", "#3e047e");
-
-var my_array;

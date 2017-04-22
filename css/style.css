@@ -1,6 +1,25 @@
-/** {*/
-  /*font-family: 'Roboto', sans-serif;*/
-/*}*/
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.button {
+  border-radius: 100px 100px 100px 100px;
+  color: #FFFFFF;
+  margin-right: 40px;
+  padding: 10px 10px 10px 10px;
+  display: inline-block;
+  width: 50px;
+  font-size: 14px;
+}
+
+a.button {
+  color: #FFFFFF;
+}
+
+.button.active {
+  color: #1C0932;
+  background-color: #FFFFFF;
+}
 
 /* basic positioning */
 .legend { list-style: none; }
