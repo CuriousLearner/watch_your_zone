@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Watch Your Zone | App to visualize public health data</title>
+  <meta name="description" content="Visualize Public health data">
+  <meta name="author" content="Sanyam Khurana">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/bubble_chart.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!--<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>-->
+</head>
+<body>
+  <div class="container">
+    <h1 style="color: white;">#WatchYourZone</h1>
+    <p id="desc"
+       style="color: #FFFFFF; text-align: center; font-size: 16px;
+       letter-spacing: 2px;"></p>
+    <div id="vis"></div>
+    <div id="legend" style="color: #FFFFFF;">
+      <ul class="legend" style="margin-top: 20px; margin-bottom: 20px;">
+        <li><span class="north"></span> North Delhi</li>
+        <li><span class="north-west"></span> North West Delhi</li>
+        <li><span class="north-east"></span> North East Delhi</li>
+        <li><span class="west"></span> West Delhi</li>
+        <li><span class="south-west"></span> South Delhi</li>
+        <li><span class="east"></span> East Delhi</li>
+        <li><span class="new-delhi"></span> New Delhi</li>
+        <li><span class="south"></span> South</li>
+        <li><span class="central"></span> Central</li>
+      </ul>
+
+    </div>
+    <div id="toolbar" style="text-align: center; margin-top: 70px;">
+      <a href="#" id="education" class="button active"
+         style="border-radius: 100px 100px 100px 100px;
+         color: #FFFFFF;
+         margin-right: 40px;
+         padding: 10px 10px 10px 10px;">Education
+      </a>
+      <a href="#" id="anc" class="button"
+         style="border-radius: 100px 100px 100px 100px; color: #FFFFFF; margin-left: 40px;
+         padding: 10px 10px 10px 10px;">Antenatal Care
+      </a>
+      <a href="#" id="contraceptive" class="button"
+         style="border-radius: 100px 100px 100px 100px; color: #FFFFFF; margin-left: 40px;
+         padding: 10px 10px 10px 10px;">Family planning
+      </a>
+      <a href="#" id="expense" class="button"
+         style="border-radius: 100px 100px 100px 100px; color: #FFFFFF; margin-left: 40px;
+         padding: 10px 10px 10px 10px;">Hospital Expenses
+      </a>
+    </div>
+    <div class="footer">
+      <p style="color: #FFFFFF; margin-top: 50px;">A demonstration of animated
+        bubble charts in
+        JavaScript and D3
+        .js</p>
+    </div>
+  </div>
+
+  <script src="lib/d3.js"></script>
+  <script src="src/tooltip.js"></script>
+  <script src="src/bubble_chart.js"></script>
+</body>
+</html>
