@@ -82,11 +82,15 @@ function bubbleChart() {
     // working with data.
 
     var max_val = Math.max.apply(null, rawData.map(function(a) {return a[chart_name]}));
+    var min_val = Math.min.apply(null, rawData.map(function(a) {return a[chart_name]}));
+    if (min_val > 2500) {
+      min_val = 0;
+    }
     //console.log("max val", max_val);
     var myNodes = rawData.map(function (d) {
       return {
         id: d.id,
-        radius: scale_x_between_min_and_max(0, max_val, 0, 80, d[chart_name]),
+        radius: scale_x_between_min_and_max(min_val, max_val, 0, 80, d[chart_name]),
         value: d[chart_name],
         name: d.zone,
         education: d.education,
